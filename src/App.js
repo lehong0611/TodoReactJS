@@ -17,6 +17,12 @@ class App extends Component {
 
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onChange = this.onChange.bind(this);
+
+    this.inputElement = React.createRef();
+  }
+
+  componentDidMount() {
+    this.inputElement.current.focus();
   }
 
   onItemClicked(item) {
@@ -76,7 +82,9 @@ class App extends Component {
               placeholder="What needs to be done ?" 
               value={newItem}
               onChange={this.onChange}
-              onKeyUp={this.onKeyUp} />
+              onKeyUp={this.onKeyUp} 
+              ref={this.inputElement} 
+              />
           </div>
           { todoItems.length && todoItems.map( (item, index) => 
             <TodoItem key={index} item={item} onClick={this.onItemClicked(item)} />
