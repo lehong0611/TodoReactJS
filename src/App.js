@@ -10,8 +10,8 @@ class App extends Component {
       newItem: '',
       todoItems: [
         {title: 'Do the laundry', isComplete: true},
-        {title: 'Do the cooking'},
-        {title: 'Sweep the floor'}
+        {title: 'Do the cooking', isComplete: true},
+        {title: 'Sweep the floor', isComplete: true}
       ]
     };
 
@@ -70,7 +70,7 @@ class App extends Component {
       return (
         <div className="App">
           <div className="Header">
-            <img src={tick} width={28} height={28}/>
+            <img src={tick} alt="" width={28} height={28}/>
             <input 
               type="text"  
               placeholder="What needs to be done ?" 
